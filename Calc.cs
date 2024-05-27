@@ -10,12 +10,10 @@
         {
             MyEventHandler?.Invoke(this, new EventArgs());
         }
-        public void Divide(int x)
+        public void Divide(double x)
         {
             if (x == 0)
             {
-                LastResult.Push(Result);
-                PrintResult();
                 throw new CalculatorDivideByZeroException();
             }
             Result /= x;
@@ -24,7 +22,7 @@
             LastResult.Push(Result);
         }
 
-        public void Multiply(int x)
+        public void Multiply(double x)
         {
             Result *= x;
             Console.Write("Умножение: ");
@@ -32,7 +30,7 @@
             LastResult.Push(Result);
         }
 
-        public void Sub(int x)
+        public void Sub(double x)
         {
             Result -= x;
             Console.Write("Вычитание: ");
@@ -40,7 +38,7 @@
             LastResult.Push(Result);
         }
 
-        public void Sum(int x)
+        public void Sum(double x)
         {
             Result += x;
             Console.Write("Сложение: ");
